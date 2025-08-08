@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margot Leborgne - Géomaticienne & Data Analyst</title>
+    <title>Margot Leborgne - Géomaticienne & statisticienne</title>
     <style>
         * {
             margin: 0;
@@ -66,6 +66,13 @@
             animation: slideInUp 1s ease-out 0.3s forwards;
         }
 
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
             padding: 15px 30px;
             background: rgba(255,255,255,0.2);
@@ -78,6 +85,13 @@
             opacity: 0;
             animation: slideInUp 1s ease-out 0.6s forwards;
             backdrop-filter: blur(10px);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-button {
+            animation-delay: 0.8s;
         }
 
         .cta-button:hover {
@@ -364,6 +378,11 @@
                 font-size: 1.2rem;
             }
 
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -404,14 +423,21 @@
     <section id="accueil" class="hero">
         <div class="hero-content">
             <h1>Margot Leborgne</h1>
-            <p class="subtitle">Géomaticienne & Data Analyst</p>
-            <a href="#projets" class="cta-button">Découvrir mes projets</a>
+            <p class="subtitle">Géomaticienne & statisticienne</p>
+            <div class="hero-buttons">
+                <a href="#projets" class="cta-button">
+                    🚀 Découvrir mes projets récents
+                </a>
+                <a href="CV_MargotLeborgne_2025_FR" download class="cta-button cv-button">
+                    📄 Télécharger mon CV
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Projets -->
     <section id="projets" class="fade-in">
-        <h2>Projets Récents en Auto-entrepreneur</h2>
+        <h2>Projets récents en tant qu'auto-entrepreneur</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <img src="archeo.png" alt="Interface mviewer archéologie" class="project-iframe">
@@ -420,7 +446,7 @@
                     <div class="project-title">Outil de Visualisation Archéologique</div>
                 </div>
                 <p class="project-description">
-                    Création d'un outil de visualisation cartographique mviewer sur Géobretagne centralisant toutes les données archéologiques du SRA et autres données d'analyse. Formation des agents à la maintenance.
+                    Création d'un outil de visualisation cartographique mviewer sur Géobretagne centralisant toutes les données archéologiques du SRA et autres données d'analyse. 
                 </p>
                 <div class="tech-tags">
                     <span class="tech-tag">Mviewer</span>
@@ -438,12 +464,15 @@
                     <div class="project-title">VisuFoncier - Outil Superset</div>
                 </div>
                 <p class="project-description">
-                    Optimisation de l'outil de datavisualisation Superset pour les données d'occupation du sol breton (MOS) et d'artificialisation. Projet lauréat FTAP 2024.
+                    Création d'un tableau de bord Superset pour analyser les données de consommation et d'articialisation du sol (MOS - OCS GE NG)
                 </p>
                 <div class="tech-tags">
+                    <span class="tech-tag">Traitement de données</span>
                     <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Indicateurs statistiques</span>
                     <span class="tech-tag">Superset</span>
                     <span class="tech-tag">QGIS</span>
+                    <span class="tech-tag">Cartographie</span>
                     <span class="tech-tag">GitHub</span>
                 </div>
                 <a href="https://superset.geobretagne.fr/superset/dashboard/visufoncier/?standalone=1" target="_blank" class="project-link">Voir l'outil →</a>
@@ -453,12 +482,14 @@
                 <img src="qfield.png" alt="Application QField Cloud" class="project-iframe">
                 <div class="project-header">
                     <div class="project-meta">Juin 2025 | Fédération Vins Bergerac</div>
-                    <div class="project-title">Migration Application Mobile</div>
+                    <div class="project-title">Application mobile QFIELD Cloud</div>
                 </div>
                 <p class="project-description">
-                    Migration de l'application mobile de prospection de Mergin vers QField Cloud pour assurer la pérennité de l'outil de terrain.
+                    Application pour la prospection et le piégeage dans les parcelles viticoles pour lutter contre les maladies de la vigne.
                 </p>
                 <div class="tech-tags">
+                    <span class="tech-tag">Traitement de données</span>
+                    <span class="tech-tag">Automatisation</span>
                     <span class="tech-tag">QGIS</span>
                     <span class="tech-tag">QField Cloud</span>
                     <span class="tech-tag">Model Builder</span>
@@ -484,17 +515,19 @@
             <div class="skill-category">
                 <h3>Data & Analyses</h3>
                 <ul class="skill-list">
-                    <li>PostgreSQL & PostGIS</li>
+                    <li>BDD - PostgreSQL & PostGIS</li>
                     <li>Apache Superset</li>
                     <li>Python & R</li>
-                    <li>Analyses statistiques</li>
+                    <li>Traitement de données</li>
+                    <li>Analyses statistiques (Corrélation, Anova, ACP, ACM...)</li>
+                    <li>GRIST</li>
                 </ul>
             </div>
 
             <div class="skill-category">
                 <h3>Développement</h3>
                 <ul class="skill-list">
-                    <li>HTML/CSS/JavaScript</li>
+                    <li>HTML/CSS/JavaScript/XML</li>
                     <li>Python & VBA</li>
                     <li>GitHub & versioning</li>
                     <li>API & services web</li>
@@ -517,7 +550,7 @@
     <section id="contact" class="fade-in">
         <h2>Contact</h2>
         <div class="contact-info">
-            <h3>Disponible pour vos projets SIG et Data</h3>
+            <h3>Expertise SIG et Data au service de vos projets</h3>
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
@@ -537,16 +570,15 @@
                     <div class="contact-icon">📍</div>
                     <div>
                         <strong>Localisation</strong><br>
-                        Rueil-Malmaison (92)<br>
+                        Bretagne (35) / Rueil-Malmaison (92)<br>
                         Travail à distance
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">💼</div>
+                    <div class="contact-icon">📄</div>
                     <div>
-                        <strong>Statut</strong><br>
-                        Auto-entrepreneur<br>
-                        Disponible
+                        <strong>CV complet</strong><br>
+                        <a href="CV_MargotLeborgne_2025_FR" download style="color: white; text-decoration: underline;">Télécharger PDF</a>
                     </div>
                 </div>
             </div>
