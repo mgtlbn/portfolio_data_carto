@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
 
-        /* Hero avec style carto/archéo */
+        /* Hero avec style carto/archéo plus subtil */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, #2c5530 0%, #4a6741 25%, #3d5a80 75%, #2c3e50 100%);
@@ -36,19 +36,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cartogrid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.3"/><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23cartogrid)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cartogrid" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M 15 0 L 0 0 0 15" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23cartogrid)"/></svg>');
             animation: float 25s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="topo" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M5,20 Q20,10 35,20 T65,20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><path d="M0,30 Q15,25 30,30 T60,30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.8"/></pattern></defs><rect width="200" height="200" fill="url(%23topo)"/></svg>');
-            animation: float 30s ease-in-out infinite reverse;
         }
 
         @keyframes float {
@@ -138,7 +127,7 @@
         .logo {
             font-weight: bold;
             font-size: 1.2rem;
-            color: #667eea;
+            color: #2c5530;
         }
 
         .nav-links {
@@ -154,7 +143,7 @@
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: #2c5530;
         }
 
         /* Sections */
@@ -218,6 +207,21 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
+        .project-iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            object-fit: cover;
+        }
+
+        .project-iframe:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
         .project-header {
             margin-bottom: 1rem;
         }
@@ -226,6 +230,13 @@
             font-size: 0.9rem;
             color: #666;
             margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
         }
 
         .project-description {
@@ -243,34 +254,22 @@
 
         .tech-tag {
             background: #f8f9fa;
-            color: #667eea;
+            color: #2c5530;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             border: 1px solid #e9ecef;
         }
 
-        .project-iframe {
-            width: 100%;
-            height: 300px;
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .project-iframe:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-            color: #667eea;
+        .project-link {
+            color: #2c5530;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            color: #764ba2;
+            color: #4a6741;
         }
 
         /* Compétences */
@@ -294,22 +293,10 @@
             transform: translateY(-5px);
         }
 
-        .skill-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #2c5530, #4a6741);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: white;
-            font-size: 2rem;
-        }
-
         .skill-category h3 {
             margin-bottom: 1rem;
             color: #333;
+            font-size: 1.2rem;
         }
 
         .skill-list {
@@ -381,11 +368,6 @@
                 display: none;
             }
 
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             section {
                 padding: 3rem 1rem;
             }
@@ -429,14 +411,10 @@
 
     <!-- Projets -->
     <section id="projets" class="fade-in">
-        <h2>Projets Récents</h2>
+        <h2>Projets Récents en Auto-entrepreneur</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <iframe 
-                    src="https://geobretagne.fr/mviewer/?config=/apps/archeologie/config.xml" 
-                    class="project-iframe"
-                    title="Outil mviewer archéologie DRAC Bretagne">
-                </iframe>
+                <img src="archeo.png" alt="Interface mviewer archéologie" class="project-iframe">
                 <div class="project-header">
                     <div class="project-meta">Août - Septembre 2025 | DRAC Bretagne</div>
                     <div class="project-title">Outil de Visualisation Archéologique</div>
@@ -454,11 +432,7 @@
             </div>
 
             <div class="project-card">
-                <iframe 
-                    src="https://superset.geobretagne.fr/superset/dashboard/visufoncier/?standalone=1" 
-                    class="project-iframe"
-                    title="Tableau de bord VisuFoncier DREAL Bretagne">
-                </iframe>
+                <img src="visufoncier.png" alt="Tableau de bord VisuFoncier" class="project-iframe">
                 <div class="project-header">
                     <div class="project-meta">Mai - Octobre 2024 | DREAL Bretagne</div>
                     <div class="project-title">VisuFoncier - Outil Superset</div>
@@ -476,10 +450,7 @@
             </div>
 
             <div class="project-card">
-                <div class="project-iframe" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); display: flex; align-items: center; justify-content: center; color: #6c757d; border: 2px dashed #dee2e6;">
-                    Interface QField Cloud<br>
-                    <small>Ajoutez votre capture ou lien</small>
-                </div>
+                <img src="qfield.png" alt="Application QField Cloud" class="project-iframe">
                 <div class="project-header">
                     <div class="project-meta">Juin 2025 | Fédération Vins Bergerac</div>
                     <div class="project-title">Migration Application Mobile</div>
@@ -493,25 +464,6 @@
                     <span class="tech-tag">Model Builder</span>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-iframe" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); display: flex; align-items: center; justify-content: center; color: #6c757d; border: 2px dashed #dee2e6;">
-                    Traitement automatisé QGIS<br>
-                    <small>Ajoutez votre capture</small>
-                </div>
-                <div class="project-header">
-                    <div class="project-meta">Nov - Déc 2024 | DDTM35</div>
-                    <div class="project-title">Automatisation Haies Bocagères</div>
-                </div>
-                <p class="project-description">
-                    Automatisation d'une procédure de traitement des données sur les haies bocagères avec calcul de scores d'importance.
-                </p>
-                <div class="tech-tags">
-                    <span class="tech-tag">QGIS</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">GDAL</span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -520,7 +472,6 @@
         <h2>Compétences</h2>
         <div class="skills-container">
             <div class="skill-category">
-                <div class="skill-icon">🗺️</div>
                 <h3>SIG & Cartographie</h3>
                 <ul class="skill-list">
                     <li>QGIS & Model Builder</li>
@@ -531,7 +482,6 @@
             </div>
 
             <div class="skill-category">
-                <div class="skill-icon">📊</div>
                 <h3>Data & Analyses</h3>
                 <ul class="skill-list">
                     <li>PostgreSQL & PostGIS</li>
@@ -542,7 +492,6 @@
             </div>
 
             <div class="skill-category">
-                <div class="skill-icon">💻</div>
                 <h3>Développement</h3>
                 <ul class="skill-list">
                     <li>HTML/CSS/JavaScript</li>
@@ -553,7 +502,6 @@
             </div>
 
             <div class="skill-category">
-                <div class="skill-icon">🎓</div>
                 <h3>Formation & Conseil</h3>
                 <ul class="skill-list">
                     <li>Formation d'agents</li>
@@ -658,8 +606,6 @@
                 }
             });
         });
-
-        // Formulaire de contact supprimé
     </script>
 </body>
 </html>
